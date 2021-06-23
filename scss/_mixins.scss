@@ -1,0 +1,25 @@
+
+//Media Queries
+@mixin telefono {
+    @media (min-width: #{$telefono}){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet}){
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop}){
+        @content;
+    }
+}
+
+//Background
+@mixin bgImage($ruta) {
+    background-image: url($ruta);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
