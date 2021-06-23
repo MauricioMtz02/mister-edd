@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+h1, h2, h3{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 4rem;
+    font-weight: $black;
+}
+h2{
+    font-size: 3rem;
+    font-weight: $bold;
+}
+h3{
+    font-size: 2rem;
+    font-weight: $bold;
+}
+p, li, a{
+    font-size: 1.4rem;
+    font-weight: $normal;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
