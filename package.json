@@ -1,0 +1,16 @@
+{
+  "name": "mister-edd_web",
+  "version": "1.0.0",
+  "description": "Web sitie mister edd",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauricio Martinez Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-webp": "^4.0.1"
+  }
+}
