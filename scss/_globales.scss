@@ -8,6 +8,7 @@ html{
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
 h1, h2, h3{
     margin: 0;
     padding: 0;
@@ -27,6 +28,7 @@ h3{
 p, li, a{
     font-size: 1.4rem;
     font-weight: $normal;
+    color: $negro;
 }
 li{
     list-style: none;
@@ -36,7 +38,7 @@ a{
 }
 
 //Utilidades
-.contendor{
+.contenedor{
     max-width: 80%;
     margin: 0 auto;
 }

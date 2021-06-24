@@ -1,3 +1,184 @@
 @import 'normalize.scss';
 @import 'variables.scss';
 @import 'globales.scss';
+@import 'mixins.scss';
+
+//header
+header{
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+}
+ 
+.carrusel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all ease .8s;
+    transform: translateX(0);
+
+    a{
+        flex-shrink: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        
+        &:nth-child(1){
+            @include bgImage('../img/slide1.webp');
+            
+        }
+        &:nth-child(2){
+            @include bgImage('../img/slide2.webp');
+        }
+        &:nth-child(3){
+            @include bgImage('../img/slide3.webp');
+        }
+        &:nth-child(4){
+            @include bgImage('../img/slide4.webp');
+        }
+        &:nth-child(5){
+            @include bgImage('../img/slide1.webp');
+            
+        }
+    }
+}
+
+.navegacion-principal{
+    padding: 1rem 0;
+    position: relative;
+    //background-color: rgba($color: #000000, $alpha: .2);
+    
+    .opciones-movil{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a{
+            img{
+                max-width: 180px;
+                transition: all ease .5s;
+
+                @include tablet{
+                    max-width: 200px;
+                }
+            }
+        }
+
+        @include desktop{
+            display: none;
+        }
+        
+    }
+    .opciones{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 10rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: rgba($color: #000000, $alpha: .7);
+        transform: translateX(100%);
+
+        &.mostrar{
+            animation: mostrar ease .6s;
+            transition: all ease .5s;
+            transform: translateX(0);
+        }
+        @keyframes mostrar {
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        &.ocultar{
+            animation: ocultar ease .6s;
+            transition: all ease .5s;
+            transform: translateX(100%);
+        }
+        @keyframes ocultar {
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(100%);
+            }
+        }
+
+        @include desktop{
+            transition: none;
+            transform: translateX(0);
+            background-color: unset;
+            position: unset;
+            width: 100%;
+            height: 100%;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .parte1, .parte2{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            @include desktop{
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        .opcion{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            a{
+                color: $blanco;
+                font-size: 2rem;
+                transition: all ease .5s;
+                font-family: 'Norican', cursive;
+
+                &:hover{
+                    color: lighten($color: $colorPrincipal, $amount: 20);
+                }
+
+                @include desktop{
+                    font-size: 1.8rem;
+                }
+            }
+            .logo{
+                display: none;
+
+                @include desktop{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img{
+                        width: 80%;
+                    }
+                }
+                
+                
+            }
+        }
+    }
+}
+
+.seccion-nosotros{
+    width: 100%;
+    height: 600px;
+}

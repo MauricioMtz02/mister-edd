@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Norican&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -373,6 +374,7 @@ h3 {
 p, li, a {
   font-size: 1.4rem;
   font-weight: 500;
+  color: #000000;
 }
 
 li {
@@ -383,11 +385,218 @@ a {
   text-decoration: none;
 }
 
-.contendor {
+.contenedor {
   max-width: 80%;
   margin: 0 auto;
 }
 
 .centrar-texto {
   text-align: center;
+}
+
+header {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.carrusel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: all ease .8s;
+  transform: translateX(0);
+}
+
+.carrusel a {
+  flex-shrink: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.carrusel a:nth-child(1) {
+  background-image: url("../img/slide1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carrusel a:nth-child(2) {
+  background-image: url("../img/slide2.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carrusel a:nth-child(3) {
+  background-image: url("../img/slide3.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carrusel a:nth-child(4) {
+  background-image: url("../img/slide4.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carrusel a:nth-child(5) {
+  background-image: url("../img/slide1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navegacion-principal {
+  padding: 1rem 0;
+  position: relative;
+}
+
+.navegacion-principal .opciones-movil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navegacion-principal .opciones-movil a img {
+  max-width: 180px;
+  transition: all ease .5s;
+}
+
+@media (min-width: 768px) {
+  .navegacion-principal .opciones-movil a img {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal .opciones-movil {
+    display: none;
+  }
+}
+
+.navegacion-principal .opciones {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(100%);
+}
+
+.navegacion-principal .opciones.mostrar {
+  animation: mostrar ease .6s;
+  transition: all ease .5s;
+  transform: translateX(0);
+}
+
+@keyframes mostrar {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.navegacion-principal .opciones.ocultar {
+  animation: ocultar ease .6s;
+  transition: all ease .5s;
+  transform: translateX(100%);
+}
+
+@keyframes ocultar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal .opciones {
+    transition: none;
+    transform: translateX(0);
+    background-color: unset;
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.navegacion-principal .opciones .parte1, .navegacion-principal .opciones .parte2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal .opciones .parte1, .navegacion-principal .opciones .parte2 {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.navegacion-principal .opciones .opcion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navegacion-principal .opciones .opcion a {
+  color: #ffffff;
+  font-size: 2rem;
+  transition: all ease .5s;
+  font-family: 'Norican', cursive;
+}
+
+.navegacion-principal .opciones .opcion a:hover {
+  color: #ff8533;
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal .opciones .opcion a {
+    font-size: 1.8rem;
+  }
+}
+
+.navegacion-principal .opciones .opcion .logo {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navegacion-principal .opciones .opcion .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navegacion-principal .opciones .opcion .logo img {
+    width: 80%;
+  }
+}
+
+.seccion-nosotros {
+  width: 100%;
+  height: 600px;
 }

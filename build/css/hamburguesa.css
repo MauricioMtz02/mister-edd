@@ -1,0 +1,31 @@
+.menu-activador {
+	width: 30px;
+	height: 20px;
+}
+.menu-activador #lanzador {
+	position: absolute;
+	left: -9999px;
+}
+.menu-activador label {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	cursor: pointer;
+}
+.menu-activador .menu-activador-linea {
+	height: 2px;
+	background-color: rgb(255, 255, 255);
+	opacity: 1;
+	transform: translateY(0) rotate(0);
+	transition: all ease 0.7s;
+}
+.menu-activador #lanzador:checked ~ label .menu-activador-linea:nth-child(1) {
+	transform: translateY(9px) rotate(45deg);
+}
+.menu-activador #lanzador:checked ~ label .menu-activador-linea:nth-child(2) {
+	opacity: 0;
+}
+.menu-activador #lanzador:checked ~ label .menu-activador-linea:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
+}
